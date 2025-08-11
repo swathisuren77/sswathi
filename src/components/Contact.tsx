@@ -187,7 +187,7 @@ const Contact = () => {
                   <Mail className="w-4 h-4 mr-2" />
                   Email Me Directly
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => window.open('https://linkedin.com/in/swathi-s-8018a62a7', '_blank')}>
+                <Button variant="outline" size="lg" onClick={() => window.open('https://www.linkedin.com/in/swathisuren77', '_blank')}>
                   <Linkedin className="w-4 h-4 mr-2" />
                   Connect on LinkedIn
                 </Button>
