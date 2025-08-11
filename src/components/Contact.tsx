@@ -25,7 +25,7 @@ const Contact = () => {
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'linkedin.com/in/swathi-s-8018a62a7',
-    href: 'www.linkedin.com/in/swathisuren77'
+    href: 'https://www.linkedin.com/in/swathisuren77'
   }, {
     icon: Github,
     label: 'GitHub',
