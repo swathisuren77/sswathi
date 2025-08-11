@@ -110,7 +110,8 @@ const Contact = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">linkedin.com/in/swathisuren77
+                  </Label>
                     <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell me about your project or just say hello..." rows={6} required className="border-primary/20 focus:border-primary resize-none" />
                   </div>
                   
