@@ -2,13 +2,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Award, Smartphone, Globe } from 'lucide-react';
-import goAgroHero from '@/assets/projects/go-agro-hero.jpg';
-import careerpathHero from '@/assets/projects/careerpath-hero.jpg';
-import ogMediaHub from '@/assets/projects/og-media-hub.png';
-import ogSSWesite from '@/assets/projects/og-ss-wesite.png';
-import ogTranslator from '@/assets/projects/og-translator.png';
-import ogCollege from '@/assets/projects/og-college.png';
-import ogForms from '@/assets/projects/og-forms.png';
+import aiGoAgro from '@/assets/projects/ai-go-agro.jpg';
+import aiCareerpath from '@/assets/projects/ai-careerpath.jpg';
+import aiMediaHub from '@/assets/projects/ai-media-hub.jpg';
+import aiSSWebsite from '@/assets/projects/ai-ss-website.jpg';
+import aiTranslator from '@/assets/projects/ai-translator.jpg';
+import aiCollege from '@/assets/projects/ai-college.jpg';
+import aiForms from '@/assets/projects/ai-forms.jpg';
 
 const Projects = () => {
   const projects = [
@@ -30,7 +30,7 @@ const Projects = () => {
         { event: "Techfini'24", prize: '₹5000 Prize' },
         { event: 'Agritech Hackathon', prize: '₹1000 Prize' }
       ],
-      image: goAgroHero,
+      image: aiGoAgro,
       status: 'Completed'
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       ],
       liveUrl: 'https://careerpathoptimizer.netlify.app/',
       githubUrl: 'https://github.com/swathisuren77/career-path-optimizer',
-      image: careerpathHero,
+      image: aiCareerpath,
       status: 'Live'
     },
     {
@@ -65,7 +65,7 @@ const Projects = () => {
         'Actively maintained'
       ],
       githubUrl: 'https://github.com/swathisuren77/Media-Hub',
-      image: ogMediaHub,
+      image: aiMediaHub,
       status: 'Public'
     },
     {
@@ -81,7 +81,7 @@ const Projects = () => {
         'Easy to deploy'
       ],
       githubUrl: 'https://github.com/swathisuren77/SS-Wesite',
-      image: ogSSWesite,
+      image: aiSSWebsite,
       status: 'Public'
     },
     {
@@ -97,7 +97,7 @@ const Projects = () => {
         'Extensible design'
       ],
       githubUrl: 'https://github.com/swathisuren77/Translator',
-      image: ogTranslator,
+      image: aiTranslator,
       status: 'Public'
     },
     {
@@ -113,7 +113,7 @@ const Projects = () => {
         'Static content'
       ],
       githubUrl: 'https://github.com/swathisuren77/College',
-      image: ogCollege,
+      image: aiCollege,
       status: 'Public'
     },
     {
@@ -129,7 +129,7 @@ const Projects = () => {
         'Clean patterns'
       ],
       githubUrl: 'https://github.com/swathisuren77/FORMS',
-      image: ogForms,
+      image: aiForms,
       status: 'Public'
     }
   ];
@@ -154,22 +154,22 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-4">
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-[1.02] scroll-animate overflow-hidden group"
+              className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-[1.01] scroll-animate overflow-hidden group"
             >
               <CardContent className="p-0">
                 {/* Project Header */}
-                <div className="bg-gradient-hero p-4 text-white">
+                <div className="bg-gradient-hero p-3 text-white">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-white/20 rounded-lg">
                         <project.icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold">{project.title}</h3>
+                        <h3 className="text-base font-bold">{project.title}</h3>
                         <p className="text-white/80">{project.subtitle}</p>
                       </div>
                     </div>
@@ -185,11 +185,11 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={`${project.title} project cover image`}
-                  className="w-full h-44 md:h-52 object-cover"
+                  className="w-full h-36 md:h-40 object-cover"
                   loading="lazy"
                 />
 
-                <div className="p-4">
+                <div className="p-3">
                   {/* Technologies */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
