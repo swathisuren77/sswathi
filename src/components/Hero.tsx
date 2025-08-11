@@ -70,7 +70,7 @@ const Hero = () => {
                   alt="Swathi S - Software Developer headshot"
                   width={2979}
                   height={4096}
-                  className="w-56 h-56 lg:w-72 lg:h-72 aspect-square object-cover relative z-10 rounded-2xl"
+                  className="w-64 h-64 lg:w-96 lg:h-96 aspect-square object-cover object-top relative z-10 rounded-2xl"
                 />
               </div>
                {/* Template-style accent elements */}
