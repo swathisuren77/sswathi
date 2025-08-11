@@ -68,7 +68,7 @@ const Projects = () => {
       image: aiMediaHub,
       status: 'Public'
     },
-    {
+    /*{
       title: 'SS Website',
       subtitle: 'Static website project',
       description: 'A simple static website hosted on GitHub.',
@@ -83,7 +83,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/swathisuren77/SS-Wesite',
       image: aiSSWebsite,
       status: 'Public'
-    },
+    },*/
     {
       title: 'Translator',
       subtitle: 'Language translator utility',
