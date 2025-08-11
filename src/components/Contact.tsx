@@ -6,77 +6,72 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Mail, Linkedin, Github, MapPin, Phone, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-
 const SERVICE_ID = 'service_vfqro6r';
 const TEMPLATE_ID = 'template_vdc8qmq';
 const PUBLIC_KEY = 'in7cfnaDLqaNdiZ9u';
-
 const Contact = () => {
-  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'swathisuren77@gmail.com',
-      href: 'mailto:swathisuren77@gmail.com'
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/swathi-s-8018a62a7',
-      href: 'https://linkedin.com/in/swathi-s-8018a62a7'
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      value: 'github.com/swathisuren77',
-      href: 'https://github.com/swathisuren77'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Namakkal, Tamil Nadu, India',
-      href: null
-    }
-  ];
-
+  const contactInfo = [{
+    icon: Mail,
+    label: 'Email',
+    value: 'swathisuren77@gmail.com',
+    href: 'mailto:swathisuren77@gmail.com'
+  }, {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/swathi-s-8018a62a7',
+    href: 'https://linkedin.com/in/swathi-s-8018a62a7'
+  }, {
+    icon: Github,
+    label: 'GitHub',
+    value: 'github.com/swathisuren77',
+    href: 'https://github.com/swathisuren77'
+  }, {
+    icon: MapPin,
+    label: 'Location',
+    value: 'Namakkal, Tamil Nadu, India',
+    href: null
+  }];
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       subject: formData.subject || 'Portfolio Contact',
-      message: formData.message,
+      message: formData.message
     };
-
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, { publicKey: PUBLIC_KEY });
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, {
+        publicKey: PUBLIC_KEY
+      });
       alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error) {
       console.error('EmailJS error:', error);
       alert('Failed to send message. Please try again later.');
     }
   };
-
-  return (
-    <section id="contact" className="py-20 bg-background scroll-mt-24 md:scroll-mt-28">
+  return <section id="contact" className="py-20 bg-background scroll-mt-24 md:scroll-mt-28">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -101,63 +96,25 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your full name"
-                        required
-                        className="border-primary/20 focus:border-primary"
-                      />
+                      <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Your full name" required className="border-primary/20 focus:border-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="your@email.com"
-                        required
-                        className="border-primary/20 focus:border-primary"
-                      />
+                      <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="your@email.com" required className="border-primary/20 focus:border-primary" />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="What's this about?"
-                      className="border-primary/20 focus:border-primary"
-                    />
+                    <Input id="subject" name="subject" value={formData.subject} onChange={handleInputChange} placeholder="What's this about?" className="border-primary/20 focus:border-primary" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project or just say hello..."
-                      rows={6}
-                      required
-                      className="border-primary/20 focus:border-primary resize-none"
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell me about your project or just say hello..." rows={6} required className="border-primary/20 focus:border-primary resize-none" />
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full"
-                  >
+                  <Button type="submit" variant="hero" size="lg" className="w-full">
                     <Send className="w-4 h-4 mr-2" />
                     Send Message
                   </Button>
@@ -172,11 +129,7 @@ const Contact = () => {
 
               {/* Contact Links */}
               <div className="space-y-4">
-                {contactInfo.map((contact, index) => (
-                  <Card 
-                    key={index}
-                    className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-105"
-                  >
+                {contactInfo.map((contact, index) => <Card key={index} className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-105">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4">
                         <div className="p-3 bg-gradient-hero rounded-lg">
@@ -186,23 +139,13 @@ const Contact = () => {
                           <h4 className="font-semibold text-foreground mb-1">
                             {contact.label}
                           </h4>
-                          {contact.href ? (
-                            <a
-                              href={contact.href}
-                              target={contact.href.startsWith('http') ? '_blank' : undefined}
-                              rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              className="text-primary hover:text-primary-light transition-colors break-all"
-                            >
+                          {contact.href ? <a href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-primary hover:text-primary-light transition-colors break-all">
                               {contact.value}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground">{contact.value}</p>
-                          )}
+                            </a> : <p className="text-muted-foreground">{contact.value}</p>}
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Availability */}
@@ -239,19 +182,11 @@ const Contact = () => {
                 your project exceeds expectations. Let's discuss how we can bring your vision to life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="hero"
-                  size="lg"
-                  onClick={() => window.open('mailto:swathisuren77@gmail.com', '_blank')}
-                >
+                <Button variant="hero" size="lg" onClick={() => window.open('mailto:swathisuren77@gmail.com', '_blank')}>
                   <Mail className="w-4 h-4 mr-2" />
                   Email Me Directly
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => window.open('https://linkedin.com/in/swathi-s-8018a62a7', '_blank')}
-                >
+                <Button variant="outline" size="lg" onClick={() => window.open('https://linkedin.com/in/swathi-s-8018a62a7', '_blank')}>
                   <Linkedin className="w-4 h-4 mr-2" />
                   Connect on LinkedIn
                 </Button>
@@ -260,8 +195,6 @@ const Contact = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
