@@ -154,9 +154,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {projects.map((project, index) => (
-            <Card 
+            <Card
               key={index}
               className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-[1.01] scroll-animate overflow-hidden group"
             >
