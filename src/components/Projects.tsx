@@ -4,6 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Award, Smartphone, Globe } from 'lucide-react';
 import goAgroHero from '@/assets/projects/go-agro-hero.jpg';
 import careerpathHero from '@/assets/projects/careerpath-hero.jpg';
+import ogMediaHub from '@/assets/projects/og-media-hub.png';
+import ogSSWesite from '@/assets/projects/og-ss-wesite.png';
+import ogTranslator from '@/assets/projects/og-translator.png';
+import ogCollege from '@/assets/projects/og-college.png';
+import ogForms from '@/assets/projects/og-forms.png';
 
 const Projects = () => {
   const projects = [
@@ -46,6 +51,86 @@ const Projects = () => {
       githubUrl: 'https://github.com/swathisuren77/career-path-optimizer',
       image: careerpathHero,
       status: 'Live'
+    },
+    {
+      title: 'Media Hub',
+      subtitle: 'Media management toolkit',
+      description: 'Media Hub repository for media management features.',
+      technologies: ['GitHub Repo'],
+      type: 'Repository',
+      icon: Github,
+      features: [
+        'Open-source project',
+        'Code organization and modular structure',
+        'Actively maintained'
+      ],
+      githubUrl: 'https://github.com/swathisuren77/Media-Hub',
+      image: ogMediaHub,
+      status: 'Public'
+    },
+    {
+      title: 'SS Website',
+      subtitle: 'Static website project',
+      description: 'A simple static website hosted on GitHub.',
+      technologies: ['GitHub Repo'],
+      type: 'Repository',
+      icon: Github,
+      features: [
+        'Clean HTML/CSS structure',
+        'Responsive layout basics',
+        'Easy to deploy'
+      ],
+      githubUrl: 'https://github.com/swathisuren77/SS-Wesite',
+      image: ogSSWesite,
+      status: 'Public'
+    },
+    {
+      title: 'Translator',
+      subtitle: 'Language translator utility',
+      description: 'Translator application repository for language conversion features.',
+      technologies: ['GitHub Repo'],
+      type: 'Repository',
+      icon: Github,
+      features: [
+        'Utility-focused code',
+        'Modular architecture',
+        'Extensible design'
+      ],
+      githubUrl: 'https://github.com/swathisuren77/Translator',
+      image: ogTranslator,
+      status: 'Public'
+    },
+    {
+      title: 'College',
+      subtitle: 'College site project',
+      description: 'A repository for a college information website.',
+      technologies: ['GitHub Repo'],
+      type: 'Repository',
+      icon: Github,
+      features: [
+        'Informational pages',
+        'Simple navigation',
+        'Static content'
+      ],
+      githubUrl: 'https://github.com/swathisuren77/College',
+      image: ogCollege,
+      status: 'Public'
+    },
+    {
+      title: 'FORMS',
+      subtitle: 'Form components and examples',
+      description: 'Repository containing various form implementations.',
+      technologies: ['GitHub Repo'],
+      type: 'Repository',
+      icon: Github,
+      features: [
+        'Input validation examples',
+        'Reusable components',
+        'Clean patterns'
+      ],
+      githubUrl: 'https://github.com/swathisuren77/FORMS',
+      image: ogForms,
+      status: 'Public'
     }
   ];
 
@@ -69,22 +154,22 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-105 scroll-animate overflow-hidden group"
+              className="bg-gradient-card border-none shadow-card hover:shadow-elegant transition-all duration-300 transform hover:scale-[1.02] scroll-animate overflow-hidden group"
             >
               <CardContent className="p-0">
                 {/* Project Header */}
-                <div className="bg-gradient-hero p-6 text-white">
+                <div className="bg-gradient-hero p-4 text-white">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-white/20 rounded-lg">
                         <project.icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">{project.title}</h3>
+                        <h3 className="text-lg font-bold">{project.title}</h3>
                         <p className="text-white/80">{project.subtitle}</p>
                       </div>
                     </div>
@@ -100,11 +185,11 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={`${project.title} project cover image`}
-                  className="w-full h-56 md:h-64 object-cover"
+                  className="w-full h-44 md:h-52 object-cover"
                   loading="lazy"
                 />
 
-                <div className="p-6">
+                <div className="p-4">
                   {/* Technologies */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
@@ -202,7 +287,7 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold mb-8">Project Impact</h3>
                 <div className="grid md:grid-cols-4 gap-8">
                   <div>
-                    <div className="text-3xl font-bold mb-2">2+</div>
+                    <div className="text-3xl font-bold mb-2">4+</div>
                     <p className="text-white/90">Major Projects</p>
                   </div>
                   <div>
