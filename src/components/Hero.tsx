@@ -48,7 +48,7 @@ const Hero = () => {
                 size="lg"
                 className="border-border hover:bg-secondary px-8 py-6 text-lg rounded-full"
               >
-                <a href="/cv/paavai-cv-2025-26.jpg" download target="_blank" rel="noopener noreferrer">Download CV</a>
+                <a href="/cv/Swathi S Resume.pdf" download target="_blank" rel="noopener noreferrer">Download CV</a>
               </Button>
             </div>
 
